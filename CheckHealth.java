@@ -69,7 +69,7 @@ public class CheckHealth {
 		Collection<Future<?>> futures = new LinkedList<Future<?>>();
 
 		while (true) {
-			System.out.printf( "%s - New session srarted (domains %d)%n", LocalDateTime.now().format(FORMATTER), servers.size() );
+			System.out.printf( "%s - New session started (domains %d)%n", LocalDateTime.now().format(FORMATTER), servers.size() );
 			for (Target server : servers) {
 				futures.add(pool.submit(new PingTask(server, TIMEOUT)));
 			}
